@@ -1,0 +1,60 @@
+ [app]
+
+# (str) Nama aplikasi yang bakal muncul di HP
+title = MADFAZ Music
+
+# (str) Nama paket aplikasi (huruf kecil semua, tanpa spasi)
+package.name = madfazmusic
+
+# (str) Domain paket aplikasi
+package.domain = org.madfaz
+
+# (str) Lokasi file main.py (titik artinya di folder utama)
+source.dir = .
+
+# (list) Jenis file yang mau dimasukkan ke APK
+source.include_exts = py,png,jpg,kv,atlas
+
+# (str) Versi aplikasi (naikin jadi 0.3 kalau lu update nanti)
+version = 0.2
+
+# (list) BAHAN BAKU / LIBRARY (SANGAT PENTING!)
+# Robot GitHub bakal otomatis download semua ini
+requirements = python3, kivy==2.3.0, kivymd==1.2.0, ytmusicapi, yt-dlp, requests, urllib3, certifi, charset-normalizer, idna
+
+# (str) Orientasi layar (portrait = berdiri)
+orientation = portrait
+
+# (bool) Fullscreen atau gak (0 = gak)
+fullscreen = 0
+
+# (list) IZIN ANDROID (Wajib biar bisa streaming)
+android.permissions = INTERNET
+
+# (int) Target SDK Android (33 itu Android 13)
+android.api = 33
+
+# (int) Minimum Android yang didukung (24 itu Android 7.0)
+android.minapi = 24
+
+# (str) Versi NDK yang stabil buat KivyMD
+android.ndk = 25b
+
+# (list) Arsitektur HP (biar bisa jalan di banyak tipe Android)
+android.archs = arm64-v8a, armeabi-v7a
+
+# (bool) Izin backup data
+android.allow_backup = True
+
+# (int) Level log (2 artinya munculin semua detail kalau error)
+log_level = 2
+
+# (bool) Salin library biar gak error pas dijalankan
+android.copy_libs = 1
+
+[buildozer]
+# Level log buat proses masak di GitHub
+log_level = 2
+
+# Jangan jalankan sebagai root (biar aman)
+warn_on_root = 1
